@@ -5,20 +5,23 @@ module.exports = {
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE,
     host: process.env.MYSQL_HOSTNAME,
-    dialect: "mysql"
+    dialect: "postgres",
+    port: process.env.PORT_SQL 
   },
   test: {
-    username: "root",
-    password: '12345678',
-    database: "dielTasks",
-    host: "127.0.0.1",
-    dialect: "mysql"
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    host: process.env.MYSQL_HOSTNAME,
+    dialect: "postgres",
+    port: process.env.PORT_SQL 
   },
   production: {
-    username: "root",
-    password: '12345678',
-    database: "dielTasks",
-    host: "127.0.0.1",
-    dialect: "mysql"
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    host: process.env.MYSQL_HOSTNAME,
+    dialect: "postgres",
+    port: process.env.PORT_SQL 
   }
 }
