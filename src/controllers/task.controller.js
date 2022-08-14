@@ -1,8 +1,12 @@
 const task = require ('../services/task.service');
 
-const findAll = async (req, res) => {
-  const rows = await task.findAll();
+const findAll = async (req, res, next) => {
+  try {
+    const rows = await task.findAll();
   res.status(200).json(rows);
+  } catch (error) {
+    next(error)
+  }
 }
 
 const findByDay = async (req, res, next) => {
@@ -46,17 +50,25 @@ const create = async (req, res, next) => {
   }
 }
 
-const update = async (req, res) => {
-  const { id } = req.params;
+const update = async (req, res,next) => {
+  try {
+    const { id } = req.params;
   const { title, description, whenDate, duration} = req.body;
 await task.update(id,title, description, whenDate, duration );
 res.status(201).json({message: 'ok'});
+  } catch (error) {
+    next(error)
+  }
 }
 
-const remove = async (req, res) => {
-  const { id } = req.params;
+const remove = async (req, res,next) => {
+  try {
+    const { id } = req.params;
   await task.remove(id);
   res.status(201).json({message: 'ok'});
+  } catch (error) {
+    next(error)
+  }
 }
 
 
