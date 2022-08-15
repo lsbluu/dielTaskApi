@@ -1,6 +1,6 @@
 const task = require ('../services/task.service');
 
-const findAll = async (req, res, next) => {
+const findAll = async (_req, res, next) => {
   try {
     const rows = await task.findAll();
   res.status(200).json(rows);
@@ -45,7 +45,6 @@ const create = async (req, res, next) => {
   const result = await task.create( title, description, whenDate, duration );
   res.status(201).json(result);
   } catch (error) {
-    console.log('error')
     next(error);
   }
 }
@@ -55,7 +54,7 @@ const update = async (req, res,next) => {
     const { id } = req.params;
   const { title, description, whenDate, duration} = req.body;
 await task.update(id,title, description, whenDate, duration );
-res.status(201).json({message: 'ok'});
+res.status(200).json({message: 'Updated!'});
   } catch (error) {
     next(error)
   }
@@ -65,7 +64,7 @@ const remove = async (req, res,next) => {
   try {
     const { id } = req.params;
   await task.remove(id);
-  res.status(201).json({message: 'ok'});
+  res.status(204).json({message: 'Removed!'});
   } catch (error) {
     next(error)
   }
