@@ -30,7 +30,9 @@ const findByDay = async (whenDate) => {
   
   const result = await Task.findAll({
     where: 
-     Sequelize.where(Sequelize.fn('DAY', Sequelize.col('when_date')), whenDate ),    
+    Sequelize.where(Sequelize.fn('date_part', 'DAY', 
+    Sequelize.col('when_date')), whenDate ),    
+
   })
 
   return result;
@@ -41,7 +43,8 @@ const findByMonth = async (whenDate) => {
   
   const result = await Task.findAll({
     where: 
-     Sequelize.where(Sequelize.fn('MONTH', Sequelize.col('when_date')), whenDate ),    
+     Sequelize.where(Sequelize.fn('date_part', 'MONTH', 
+     Sequelize.col('when_date')), whenDate ),    
   })
 
   return result;
