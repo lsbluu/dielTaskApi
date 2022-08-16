@@ -5,26 +5,26 @@ module.exports = {
     {
       title: 'doctor',
       description: 'hearts',
-      when_date: '2022/12/10',
-      duration: '10:00:00'
+      when_date: '2022/12/09 10:30',
+      duration: 1
     },
     {
       title: 'doctor',
       description: 'feet',
-      when_date: '2022/05/12',
-      duration: '09:00:00'
+      when_date: '2022/05/11 11:35',
+      duration: 1
     },
     {
       title: 'doctor',
       description: 'head',
-      when_date: '2022/06/12',
-      duration: '09:00:00'
+      when_date: '2022/06/10 09:20',
+      duration: 1
     },
     {
       title: 'doctor',
       description: 'eyes',
-      when_date: '2022/07/12',
-      duration: '09:00:00'
+      when_date: '2022/07/13 08:30',
+      duration: 1
     },
   ], {}),
 

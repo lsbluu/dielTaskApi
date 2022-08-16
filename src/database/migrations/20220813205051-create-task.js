@@ -24,7 +24,7 @@ module.exports = {
       },
       duration: {
         allowNull: false,
-        type: Sequelize.TIME
+        type: Sequelize.NUMERIC
       }
       
     }, {timestamps: false});

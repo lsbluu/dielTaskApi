@@ -7,7 +7,7 @@ const Task = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       field: 'when_date'
     },
-    duration: DataTypes.TIME,
+    duration: DataTypes.NUMERIC,
   }, {timestamps: false});
 
   return Task;
